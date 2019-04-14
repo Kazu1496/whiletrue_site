@@ -1,7 +1,11 @@
 ---
-title: MERGE
+title: MERGE | While True
+description: ギターミュージックのニュージェネレーション"While True:"による待望のセカンドアルバム「MERGE」の特設サイトです。
+og_image:
 ---
-%link{rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.8.1/css/all.css", integrity: "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf", crossorigin: "anonymous"}
+#loading_container
+  %em 綯い交じり、まだ見ぬ境地へ
+  .loading_bar
 %header
   %nav
     %ul
@@ -11,11 +15,14 @@ title: MERGE
       %li
         = link_to "http://www.facebook.com/sharer.php?u=https://whiletrue-jpn.com/" do
           %i.fab.fa-facebook-square
+      %li
+        = link_to "http://line.me/R/msg/text/?https://whiletrue-jpn.com/" do
+          %i.fab.fa-line
 .head_container
   = image_tag 'jacket_text.png', alt: "アルバムジャケット"
   %h1
     While True: Second Album
-    %strong - MERGE -
+    %strong MERGE
     %span
       ギターミュージックのニュージェネレーション"While True:"による<br>
       待望のセカンドアルバム
