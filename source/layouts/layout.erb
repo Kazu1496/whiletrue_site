@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title><%= current_page.data.title || "While True:" %></title>
+    <meta name="description" content="<%= current_page.data.description %>">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1 ,user-scalable=no">
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site" %>
+    <!-- <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= current_page.data.title || "favy" %>">
+    <meta property="og:description" content="<%= current_page.data.description %>">
+    <meta property="og:image" content="http://info.favy.jp/assets/images/page/2018/OGP.png">
+    <meta property="og:url" content="http://info.favy.jp<%= current_page.url %>">
+    <meta property="fb:app_id" content="684971241565075"> -->
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
