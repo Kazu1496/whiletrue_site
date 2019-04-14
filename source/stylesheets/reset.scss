@@ -30,8 +30,8 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-html{
-  overflow-y: scroll;
+html, body{
+  overflow-x: hidden;
 }
 
 blockquote, q {

@@ -13,18 +13,35 @@ a{
   #loading_container{
     position: fixed;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
+    color: #FFF;
     background-color: #121920;
-    .loading_bar{
-      
+    z-index: 100;
+    p{
+      font-size: 20px;
+      letter-spacing: 10px;
+      animation: loadingOpacity 3s ease-out 0s infinite alternate;
+    }
+    em{
+      display: none;
+      font-size: 24px;
+      letter-spacing: 15px;
     }
   }
   header{
     position: fixed;
     top: 0;
+    z-index: 50;
     width: 100%;
-    z-index: 100;
+    background-color: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &.moved{
+      background-color: #121920;
+    }
     nav{
       ul{
         display: flex;
@@ -61,11 +78,11 @@ a{
     &:before{
       content: '';
       background: inherit;
-      -webkit-filter: blur(5px) brightness(25%);
-      -moz-filter: blur(5px) brightness(25%);
-      -o-filter: blur(5px) brightness(25%);
-      -ms-filter: blur(5px) brightness(25%);
-      filter: blur(5px) brightness(25%);
+      -webkit-filter: brightness(30%);
+      -moz-filter: brightness(30%);
+      -o-filter: brightness(30%);
+      -ms-filter: brightness(30%);
+      filter: brightness(30%);
       position: absolute;
       top: -5px;
       left: -5px;
@@ -109,37 +126,6 @@ a{
       }
     }
   }
-  .bottom_band{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background-color: rbga(#000, 0);
-    em{
-      display: flex;
-      align-items: center;
-      color: #FFF;
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 10px;
-      &:before, &:after {
-        content: "";
-        flex-grow: 1;
-        width: 100px;
-        border-top: 1px solid;
-      }
-      &:before {
-      	margin-right: .4em;
-      }
-      &:after {
-        margin-right: .4em;
-      }
-    }
-  }
   iframe{
     display: block;
   }
@@ -173,7 +159,7 @@ a{
           font-size: 24px;
           padding: 40px 0;
           &:not(:last-child){
-            border-bottom: 1px solid #FFF;
+            border-bottom: 1px solid rgba(#FFF, 0.2);
           }
           .number{
             font-size: 14px;
@@ -221,6 +207,7 @@ a{
       width: calc(50% - 100px);
       background-image: image-url("images/bg_img2.png");
       background-attachment: fixed;
+      background-size: cover;
       padding: 50px;
       margin: 0 auto;
       li{
@@ -228,7 +215,7 @@ a{
         font-size: 14px;
         padding: 40px 0;
         &:not(:last-child){
-          border-bottom: 1px solid #FFF;
+          border-bottom: 1px solid rgba(#FFF, 0.2);
         }
         a{
           display: block;
@@ -277,11 +264,38 @@ a{
   }
 }
 @media all and (max-width: 768px){
+  #loading_container{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: #FFF;
+    background-color: #121920;
+    z-index: 100;
+    p{
+      font-size: 13px;
+      letter-spacing: 5px;
+      animation: loadingOpacity 3s ease-out 0s infinite alternate;
+    }
+    em{
+      display: none;
+      font-size: 16px;
+      letter-spacing: 5px;
+    }
+  }
   header{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 50;
+    background-color: transparent;
+    transition: all 500ms ease-out forwards;
+    &.moved{
+      background-color: #121920;
+    }
     nav{
       ul{
         display: flex;
@@ -294,7 +308,7 @@ a{
             color: #FFF;
             letter-spacing: 8px;
             i{
-              font-size: 30px;
+              font-size: 20px;
             }
           }
         }
@@ -319,11 +333,11 @@ a{
     &:before{
       content: '';
       background: inherit;
-      -webkit-filter: blur(5px) brightness(25%);
-      -moz-filter: blur(5px) brightness(25%);
-      -o-filter: blur(5px) brightness(25%);
-      -ms-filter: blur(5px) brightness(25%);
-      filter: blur(5px) brightness(25%);
+      -webkit-filter: brightness(30%);
+      -moz-filter: brightness(30%);
+      -o-filter: brightness(30%);
+      -ms-filter: brightness(30%);
+      filter: brightness(30%);
       position: absolute;
       top: -5px;
       left: -5px;
@@ -365,23 +379,6 @@ a{
       }
     }
   }
-  .bottom_band{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background-color: rbga(#000, 0);
-    em{
-      color: #FFF;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 5px;
-    }
-  }
   iframe{
     display: block;
   }
@@ -415,13 +412,13 @@ a{
           font-size: 13px;
           padding: 20px 0;
           &:not(:last-child){
-            border-bottom: 1px solid #FFF;
+            border-bottom: 1px solid rgba(#FFF, 0.2);
           }
           .number{
             font-size: 10px;
           }
           .title{
-            font-size: 24px;
+            font-size: 20px;
             letter-spacing: 2px;
             margin: 5px 0;
           }
@@ -463,6 +460,7 @@ a{
       width: calc(80% - 20px);
       background-image: image-url("images/bg_img2.png");
       background-attachment: fixed;
+      background-size: cover;
       padding: 10px;
       margin: 0 auto;
       li{
@@ -470,12 +468,12 @@ a{
         font-size: 10px;
         padding: 20px 0;
         &:not(:last-child){
-          border-bottom: 1px solid #FFF;
+          border-bottom: 1px solid rgba(#FFF, 0.2);
         }
         a{
           display: block;
           color: #FFF;
-          font-size: 24px;
+          font-size: 18px;
           letter-spacing: 2px;
           margin-top: 10px;
         }
@@ -500,7 +498,7 @@ a{
       margin-bottom: 10px;
     }
     span{
-      font-size: 24px;
+      font-size: 18px;
       letter-spacing: 5px;
       margin-bottom: 10px;
     }
@@ -530,5 +528,17 @@ a{
       font-size: 10px;
       letter-spacing: 2px;
     }
+  }
+}
+
+@keyframes loadingOpacity {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
