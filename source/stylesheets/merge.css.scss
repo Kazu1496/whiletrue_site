@@ -199,6 +199,13 @@ a{
           font-size: 30px;
           margin-top: 10px;
         }
+        a{
+          display: inline-block;
+          color: #FFF;
+          border: 1px solid #FFF;
+          padding: 10px 20px;
+          margin: 10px 0;
+        }
       }
     }
   }
@@ -451,6 +458,14 @@ a{
         .event_content{
           font-size: 18px;
           margin-top: 10px;
+        }
+        a{
+          display: inline-block;
+          color: #FFF;
+          font-size: 13px;
+          border: 1px solid #FFF;
+          padding: 10px 20px;
+          margin: 10px 0;
         }
       }
     }
